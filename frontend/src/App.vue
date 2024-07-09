@@ -4,18 +4,33 @@ import TheWelcome from './components/TheWelcome.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <ul>
+      <li v-for="book in books">{{ book }}</li>
+    </ul>
+  </div>
 </template>
+
+<script>
+
+export default {
+  data() {
+    return {
+      books: []
+    };
+  },
+  mounted() {
+    fetch('http://localhost:8000/books')
+    .then(response => response.json())  
+    .then(data => {
+        this.books = data;
+      })
+      .catch(error => {
+        console.error('There was an error fetching the books!', error);
+      });
+  }
+};
+</script>
 
 <style scoped>
 header {

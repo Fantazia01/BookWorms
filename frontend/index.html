@@ -1,42 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/src/assets/winrar_logo.jpg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Books</title>
-  </head>
-  <body>
-    <div id="app">
-      <h1>Books</h1>
-      <ul>
-        <li v-for="book in books">{{ book }}</li>
-      </ul>
-    </div>
-    
-    <script type="module">
-      import { createApp, ref, onMounted } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
-    
-      createApp({
-        setup() {
-          const books = ref([])
-    
-          onMounted(() => {
-            fetch('http://localhost:8000/books')
-              .then(response => response.json())
-              .then(data => {
-                books.value = data
-              })
-              .catch(error => {
-                console.error('Error fetching books:', error)
-              })
-          })
-    
-          return {
-            books
-          }
-        }
-      }).mount('#app')
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
 </html>
