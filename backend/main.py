@@ -9,7 +9,7 @@ app = FastAPI()
 # CORS middleware hozzáadása
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://10.128.0.2:5173", "http://34.45.155.233:5173", "http://localhost"],  # A frontend origin
+    allow_origins=["http://localhost:5173", "http://10.128.0.2:5173", "http://34.45.155.233:5173", "http://localhost", "https://frontend-weathered-resonance-3450.fly.dev"],  # A frontend origin
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
