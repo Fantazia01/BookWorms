@@ -10,8 +10,11 @@ WORKDIR /app
 # Clone the latest code from GitHub
 RUN git clone https://github.com/Fantazia01/BookWorms.git .
 
+# Set the working directory to the backend folder inside the cloned repo
+WORKDIR /app/backend
+
 # Install Python dependencies
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Create the database
 RUN python create_db.py

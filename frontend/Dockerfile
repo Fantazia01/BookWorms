@@ -10,8 +10,11 @@ WORKDIR /app
 # Clone the latest code from GitHub
 RUN git clone https://github.com/Fantazia01/BookWorms.git .
 
+# Set the working directory to the frontend folder inside the cloned repo
+WORKDIR /app/frontend
+
 # Install Node.js dependencies
 RUN npm install
 
 # Run the frontend server
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+CMD ["npm", "run", "dev", "--", "--host"]
