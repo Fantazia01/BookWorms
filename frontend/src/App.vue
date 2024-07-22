@@ -55,7 +55,7 @@ export default {
     };
   },
   mounted() {
-    fetch('http://34.45.155.233:8000/books')
+    fetch('https://backend-broken-fog-2845.fly.dev/books')
       .then(response => response.json())
       .then(data => {
         this.books = data;

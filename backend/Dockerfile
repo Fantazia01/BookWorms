@@ -20,4 +20,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN python create_db.py
 
 # Run the backend server
-CMD ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0", "--port", "8080"]
